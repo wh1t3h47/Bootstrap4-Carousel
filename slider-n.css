@@ -1,0 +1,1055 @@
+
+
+/** timeline box structure **/
+.timeline {
+  list-style: none;
+  padding: 20px 0 20px;
+  position: relative;
+}
+
+.timeline:before {
+  top: 1.5%;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 3px;
+  background-color: #eee;
+  left: 50%;
+  margin-left: -1.5px;
+}
+
+.tldate {
+  display: block;
+  width: 200px;
+  background: #414141;
+  border: 3px solid #212121;
+  color: #ededed;
+  margin: 0 auto;
+  padding: 3px 0;
+  font-weight: bold;
+  text-align: center;
+  -webkit-box-shadow: 0 0 11px rgba(0,0,0,0.35);
+}
+
+.timeline li {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.timeline li:before, .timeline li:after {
+  content: " ";
+  display: table;
+}
+.timeline li:after {
+  clear: both;
+}
+.timeline li:before, .timeline li:after {
+  content: " ";
+  display: table;
+}
+
+/** timeline panels **/
+.timeline li .timeline-panel {
+  width: 46%;
+  float: left;
+  background: #fff;
+  border: 1px solid #d4d4d4;
+  padding: 20px;
+  position: relative;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+/** panel arrows **/
+.timeline li .timeline-panel:before {
+  position: absolute;
+  top: 26px;
+  right: -15px;
+  display: inline-block;
+  border-top: 15px solid transparent;
+  border-left: 15px solid #ccc;
+  border-right: 0 solid #ccc;
+  border-bottom: 15px solid transparent;
+  content: " ";
+}
+
+.timeline li .timeline-panel:after {
+  position: absolute;
+  top: 27px;
+  right: -14px;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 14px solid transparent;
+  content: " ";
+}
+.timeline li .timeline-panel.noarrow:before, .timeline li .timeline-panel.noarrow:after {
+  top:0;
+  right:0;
+  display: none;
+  border: 0;
+}
+
+.timeline li.timeline-inverted .timeline-panel {
+  float: right;
+}
+
+.timeline li.timeline-inverted .timeline-panel:before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+
+.timeline li.timeline-inverted .timeline-panel:after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -14px;
+  right: auto;
+}
+
+
+/** timeline circle icons **/
+.timeline li .tl-circ {
+  position: absolute;
+  color: #fff;
+  top: 23px;
+  left: 50%;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: -16px;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+
+/** timeline content **/
+
+.tl-heading h4 {
+  margin: 0;
+}
+
+.tl-body p, .tl-body ul {
+  margin-bottom: 0;
+}
+
+.tl-body > p + p {
+  margin-top: 5px;
+}
+
+/** media queries **/
+@media (max-width: 991px) {
+  .timeline li .timeline-panel {
+    width: 44%;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-header h1 { font-size: 1.8em; }
+  
+  ul.timeline:before {
+    left: 40px;
+  }
+  
+  .tldate { width: 140px; }
+
+  ul.timeline li .timeline-panel {
+    width: calc(100% - 90px);
+    width: -moz-calc(100% - 90px);
+    width: -webkit-calc(100% - 90px);
+  }
+
+  ul.timeline li .tl-circ {
+    top: 22px;
+    left: 22px;
+    margin-left: 0;
+
+  }
+  ul.timeline > li > .tldate {
+    margin: 0;
+  }
+
+  ul.timeline > li > .timeline-panel {
+    float: right;
+  }
+
+  ul.timeline > li > .timeline-panel:before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+
+  ul.timeline > li > .timeline-panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+  }
+}    
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+/* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+/* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+/* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+/* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
+
+/* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+  font-size: 3.5rem;
+  }
+}
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+}
+/*.nav {
+  background:transparent;
+  background-color:transparent;
+}*/
+.site-header {
+  background-color: rgba(0, 0, 0, .85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+  color: #999;
+  transition: ease-in-out color .15s;
+}
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+/* Here is what styles chromium use
+/* those are all styled by bootstrap
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+} /*ok*
+.carousel-control { /*left (and right?)*
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0; /*nok/
+    width: 15%;
+    font-size: 20px;
+    color: #fff; /*nok, not needed (for glyphcons*
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);/* nok*
+    background-color: rgba(0,0,0,0);/*nok*
+    opacity: .5;
+    /*new
+    transition: opacity .15s ease
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+.carousel-inner>.active, .carousel-inner>.next, .carousel-inner>.prev { /*active item*
+    display: block;/*ok*
+}
+.carousel-inner>.item { /*active (and not active?)*
+    position: relative;
+    display: none;
+    -webkit-transition: .6s ease-in-out left;
+    -o-transition: .6s ease-in-out left;
+    transition: .6s ease-in-out left;
+    /*new*
+    float: left;
+    width: 100%;
+    margin-right: -100%;/*HERE*
+    
+}
+img {
+    /*not in bs4*
+    vertical-align: middle; /*center the image?*
+}
+img {
+    /* nb4*
+    border: 0;
+}
+
+
+/*those are custom styled
+
+
+@media not all, (-webkit-transform-3d)
+.multi-item-carousel .carousel-inner > .item {
+    /*OK*
+    transition: 500ms ease-in-out left;/*crossed out*
+    transition: 500ms ease-in-out all;
+    -webkit-backface-visibility: visible;/*co*
+    backface-visibility: visible;
+    -webkit-transform: none!important;/*co*
+    transform: none!important;
+}
+
+@media not all, (-webkit-transform-3d)
+.multi-item-carousel .carousel-inner > .carousel-item {
+    /*In Use*
+    transition: 500ms ease-in-out left;
+    transition: 500ms ease-in-out all;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+    -webkit-transform: none!important;
+    transform: none!important;
+}
+
+.multi-item-carousel .carousel-inner > .item {
+    /*nok*
+    transition: 500ms ease-in-out left;/*co*
+}
+
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-single-item {
+  height: 31rem; /* it should be 32, but for some reason 32 leaves a space below */
+}
+.carousel-single-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+/* .carousel-item-next, .carousel-item-prev, .carousel-item.active /*wat*/
+
+.multi-item-carousel .carousel-inner > .carousel-item {
+  transition: 500ms ease-in-out left;
+}
+.multi-item-carousel .carousel-inner .active .carousel-item-left {
+  left: -33%;
+}/* not in use?*/
+.multi-item-carousel .carousel-inner .active .carousel-item-right {
+  left: 33%;
+}/*niu*/
+.multi-item-carousel .carousel-inner .carousel-item-next {
+  left: 33%;
+}/*niu*/
+.multi-item-carousel .carousel-inner .carousel-item-prev {
+  left: -33%;
+}/*niu*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .multi-item-carousel .carousel-inner > .carousel-item {/*next*/
+    transition: 500ms ease-in-out left;
+    transition: 500ms ease-in-out all;
+    -webkit-backface-visibility: visible;
+            backface-visibility: visible;
+    -webkit-transform: none!important;
+            transform: none!importannextt;
+  }
+}
+.multi-item-carousel .carousel-control.left,
+.multi-item-carousel .carousel-control.right {
+  background-image: none;
+}
+/*
+@media (max-width: 767px) {
+  .xs-items-1 .carousel-inner .active.left {
+    left: -100%;
+  }
+  .xs-items-1 .carousel-inner .active.right {
+    left: 100%;
+  }
+  .xs-items-1 .carousel-inner .next {
+    left: 100%;next
+  }
+  .xs-items-1 .carousel-inner .prev {
+    left: -100%;
+  }
+
+  .xs-items-2 .carousel-inner .active.left {
+    left: -50%;
+  }
+  .xs-items-2 .carousel-inner .active.right {
+    left: 50%;
+  }
+  .xs-items-2 .carousel-inner .next {
+    left: 50%;
+  }
+  .xs-items-2 .carousel-inner .prev {
+    left: -50%;
+  }
+
+  .xs-items-3 .carousel-inner .active.left {
+    left: -33.33333%;
+  }
+  .xs-items-3 .carousel-inner .active.right {
+    left: 33.33333%;
+  }
+  .xs-items-3 .carousel-inner .next {
+    left: 33.33333%;
+  }
+  .xs-items-3 .carousel-inner .prev {
+    left: -33.33333%;
+  }
+
+  .xs-items-4 .carousel-inner .active.left {
+    left: -25%;
+  }
+  .xs-items-4 .carousel-inner .active.right {
+    left: 25%;
+  }
+  .xs-items-4 .carousel-inner .next {
+    left: 25%;
+  }
+  .xs-items-4 .carousel-inner .prev {
+    left: -25%;
+  }
+
+  .xs-items-5 .carousel-inner .active.left {
+    left: -20%;
+  }
+  .xs-items-5 .carousel-inner .active.right {
+    left: 20%;
+  }
+  .xs-items-5 .carousel-inner .next {
+    left: 20%;
+  }
+  .xs-items-5 .carousel-inner .prev {
+    left: -20%;
+  }
+
+  .xs-items-6 .carousel-inner .active.left {
+    left: -16.66667%;
+  }
+  .xs-items-6 .carousel-inner .active.right {
+    left: 16.66667%;
+  }
+  .xs-items-6 .carousel-inner .next {
+    left: 16.66667%;
+  }
+  .xs-items-6 .carousel-inner .prev {
+    left: -16.66667%;
+  }
+
+  .xs-items-7 .carousel-inner .active.left {
+    left: -14.28571%;
+  }
+  .xs-items-7 .carousel-inner .active.right {
+    left: 14.28571%;
+  }
+  .xs-items-7 .carousel-inner .next {
+    left: 14.28571%;
+  }
+  .xs-items-7 .carousel-inner .prev {
+    left: -14.28571%;
+  }
+
+  .xs-items-8 .carousel-inner .active.left {
+    left: -12.5%;
+  }
+  .xs-items-8 .carousel-inner .active.right {
+    left: 12.5%;
+  }
+  .xs-items-8 .carousel-inner .next {
+    left: 12.5%;
+  }
+  .xs-items-8 .carousel-inner .prev {
+    left: -12.5%;
+  }
+
+  .xs-items-9 .carousel-inner .active.left {
+    left: -11.11111%;
+  }
+  .xs-items-9 .carousel-inner .active.right {
+    left: 11.11111%;
+  }
+  .xs-items-9 .carousel-inner .next {
+    left: 11.11111%;
+  }
+  .xs-items-9 .carousel-inner .prev {
+    left: -11.11111%;
+  }
+
+  .xs-items-10 .carousel-inner .active.left {
+    left: -10%;
+  }
+  .xs-items-10 .carousel-inner .active.right {
+    left: 10%;
+  }
+  .xs-items-10 .carousel-inner .next {
+    left: 10%;
+  }
+  .xs-items-10 .carousel-inner .prev {
+    left: -10%;
+  }
+
+  .xs-items-11 .carousel-inner .active.left {
+    left: -9.09091%;
+  }
+  .xs-items-11 .carousel-inner .active.right {
+    left: 9.09091%;
+  }
+  .xs-items-11 .carousel-inner .next {
+    left: 9.09091%;
+  }
+  .xs-items-11 .carousel-inner .prev {
+    left: -9.09091%;
+  }
+
+  .xs-items-12 .carousel-inner .active.left {
+    left: -8.33333%;
+  }
+  .xs-items-12 .carousel-inner .active.right {
+    left: 8.33333%;
+  }
+  .xs-items-12 .carousel-inner .next {
+    left: 8.33333%;
+  }
+  .xs-items-12 .carousel-inner .prev {
+    left: -8.33333%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .sm-items-1 .carousel-inner .active.left {
+    left: -100%;
+  }
+  .sm-items-1 .carousel-inner .active.right {
+    left: 100%;
+  }
+  .sm-items-1 .carousel-inner .next {
+    left: 100%;
+  }
+  .sm-items-1 .carousel-inner .prev {
+    left: -100%;
+  }
+
+  .sm-items-2 .carousel-inner .active.left {
+    left: -50%;
+  }
+  .sm-items-2 .carousel-inner .active.right {
+    left: 50%;
+  }
+  .sm-items-2 .carousel-inner .next {
+    left: 50%;
+  }
+  .sm-items-2 .carousel-inner .prev {
+    left: -50%;
+  }
+
+  .sm-items-3 .carousel-inner .active.left {
+    left: -33.33333%;
+  }
+  .sm-items-3 .carousel-inner .active.right {
+    left: 33.33333%;
+  }
+  .sm-items-3 .carousel-inner .next {
+    left: 33.33333%;
+  }
+  .sm-items-3 .carousel-inner .prev {
+    left: -33.33333%;
+  }
+
+  .sm-items-4 .carousel-inner .active.left {
+    left: -25%;
+  }
+  .sm-items-4 .carousel-inner .active.right {
+    left: 25%;
+  }
+  .sm-items-4 .carousel-inner .next {
+    left: 25%;
+  }
+  .sm-items-4 .carousel-inner .prev {
+    left: -25%;
+  }
+
+  .sm-items-5 .carousel-inner .active.left {
+    left: -20%;
+  }
+  .sm-items-5 .carousel-inner .active.right {
+    left: 20%;
+  }
+  .sm-items-5 .carousel-inner .next {
+    left: 20%;
+  }
+  .sm-items-5 .carousel-inner .prev {
+    left: -20%;
+  }
+
+  .sm-items-6 .carousel-inner .active.left {
+    left: -16.66667%;
+  }
+  .sm-items-6 .carousel-inner .active.right {
+    left: 16.66667%;
+  }
+  .sm-items-6 .carousel-inner .next {
+    left: 16.66667%;
+  }
+  .sm-items-6 .carousel-inner .prev {
+    left: -16.66667%;
+  }
+
+  .sm-items-7 .carousel-inner .active.left {
+    left: -14.28571%;
+  }
+  .sm-items-7 .carousel-inner .active.right {
+    left: 14.28571%;
+  }
+  .sm-items-7 .carousel-inner .next {
+    left: 14.28571%;
+  }
+  .sm-items-7 .carousel-inner .prev {
+    left: -14.28571%;
+  }
+
+  .sm-items-8 .carousel-inner .active.left {
+    left: -12.5%;
+  }
+  .sm-items-8 .carousel-inner .active.right {
+    left: 12.5%;
+  }
+  .sm-items-8 .carousel-inner .next {
+    left: 12.5%;
+  }
+  .sm-items-8 .carousel-inner .prev {
+    left: -12.5%;
+  }
+
+  .sm-items-9 .carousel-inner .active.left {
+    left: -11.11111%;
+  }
+  .sm-items-9 .carousel-inner .active.right {
+    left: 11.11111%;
+  }
+  .sm-items-9 .carousel-inner .next {
+    left: 11.11111%;
+  }
+  .sm-items-9 .carousel-inner .prev {
+    left: -11.11111%;
+  }
+
+  .sm-items-10 .carousel-inner .active.left {
+    left: -10%;
+  }
+  .sm-items-10 .carousel-inner .active.right {
+    left: 10%;
+  }
+  .sm-items-10 .carousel-inner .next {
+    left: 10%;
+  }
+  .sm-items-10 .carousel-inner .prev {
+    left: -10%;
+  }
+
+  .sm-items-11 .carousel-inner .active.left {
+    left: -9.09091%;
+  }
+  .sm-items-11 .carousel-inner .active.right {
+    left: 9.09091%;
+  }
+  .sm-items-11 .carousel-inner .next {
+    left: 9.09091%;
+  }
+  .sm-items-11 .carousel-inner .prev {
+    left: -9.09091%;
+  }
+
+  .sm-items-12 .carousel-inner .active.left {
+    left: -8.33333%;
+  }
+  .sm-items-12 .carousel-inner .active.right {
+    left: 8.33333%;
+  }
+  .sm-items-12 .carousel-inner .next {
+    left: 8.33333%;
+  }
+  .sm-items-12 .carousel-inner .prev {
+    left: -8.33333%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .md-items-1 .carousel-inner .active.left {
+    left: -100%;
+  }
+  .md-items-1 .carousel-inner .active.right {
+    left: 100%;
+  }
+  .md-items-1 .carousel-inner .next {
+    left: 100%;
+  }
+  .md-items-1 .carousel-inner .prev {
+    left: -100%;
+  }
+
+  .md-items-2 .carousel-inner .active.left {
+    left: -50%;
+  }
+  .md-items-2 .carousel-inner .active.right {
+    left: 50%;
+  }
+  .md-items-2 .carousel-inner .next {
+    left: 50%;
+  }
+  .md-items-2 .carousel-inner .prev {
+    left: -50%;
+  }
+
+  .md-items-3 .carousel-inner .active.left {
+    left: -33.33333%;
+  }
+  .md-items-3 .carousel-inner .active.right {
+    left: 33.33333%;
+  }
+  .md-items-3 .carousel-inner .next {
+    left: 33.33333%;
+  }
+  .md-items-3 .carousel-inner .prev {
+    left: -33.33333%;
+  }
+
+  .md-items-4 .carousel-inner .active.left {
+    left: -25%;
+  }
+  .md-items-4 .carousel-inner .active.right {
+    left: 25%;
+  }
+  .md-items-4 .carousel-inner .next {
+    left: 25%;
+  }
+  .md-items-4 .carousel-inner .prev {
+    left: -25%;
+  }
+
+  .md-items-5 .carousel-inner .active.left {
+    left: -20%;
+  }
+  .md-items-5 .carousel-inner .active.right {
+    left: 20%;
+  }
+  .md-items-5 .carousel-inner .next {
+    left: 20%;
+  }
+  .md-items-5 .carousel-inner .prev {
+    left: -20%;
+  }
+
+  .md-items-6 .carousel-inner .active.left {
+    left: -16.66667%;
+  }
+  .md-items-6 .carousel-inner .active.right {
+    left: 16.66667%;
+  }
+  .md-items-6 .carousel-inner .next {
+    left: 16.66667%;
+  }
+  .md-items-6 .carousel-inner .prev {
+    left: -16.66667%;
+  }
+
+  .md-items-7 .carousel-inner .active.left {
+    left: -14.28571%;
+  }
+  .md-items-7 .carousel-inner .active.right {
+    left: 14.28571%;
+  }
+  .md-items-7 .carousel-inner .next {
+    left: 14.28571%;
+  }
+  .md-items-7 .carousel-inner .prev {
+    left: -14.28571%;
+  }
+
+  .md-items-8 .carousel-inner .active.left {
+    left: -12.5%;
+  }
+  .md-items-8 .carousel-inner .active.right {
+    left: 12.5%;
+  }
+  .md-items-8 .carousel-inner .next {
+    left: 12.5%;
+  }
+  .md-items-8 .carousel-inner .prev {
+    left: -12.5%;
+  }
+
+  .md-items-9 .carousel-inner .active.left {
+    left: -11.11111%;
+  }
+  .md-items-9 .carousel-inner .active.right {
+    left: 11.11111%;
+  }
+  .md-items-9 .carousel-inner .next {
+    left: 11.11111%;
+  }
+  .md-items-9 .carousel-inner .prev {
+    left: -11.11111%;
+  }
+
+  .md-items-10 .carousel-inner .active.left {
+    left: -10%;
+  }
+  .md-items-10 .carousel-inner .active.right {
+    left: 10%;
+  }
+  .md-items-10 .carousel-inner .next {
+    left: 10%;
+  }
+  .md-items-10 .carousel-inner .prev {
+    left: -10%;
+  }
+
+  .md-items-11 .carousel-inner .active.left {
+    left: -9.09091%;
+  }
+  .md-items-11 .carousel-inner .active.right {
+    left: 9.09091%;
+  }
+  .md-items-11 .carousel-inner .next {
+    left: 9.09091%;
+  }
+  .md-items-11 .carousel-inner .prev {
+    left: -9.09091%;
+  }
+
+  .md-items-12 .carousel-inner .active.left {
+    left: -8.33333%;
+  }
+  .md-items-12 .carousel-inner .active.right {
+    left: 8.33333%;
+  }
+  .md-items-12 .carousel-inner .next {
+    left: 8.33333%;
+  }
+  .md-items-12 .carousel-inner .prev {
+    left: -8.33333%;
+  }
+}
+@media (min-width: 1200px) {
+  .lg-items-1 .carousel-inner .active.left {
+    left: -100%;
+  }
+  .lg-items-1 .carousel-inner .active.right {
+    left: 100%;
+  }
+  .lg-items-1 .carousel-inner .next {
+    left: 100%;
+  }
+  .lg-items-1 .carousel-inner .prev {
+    left: -100%;
+  }
+
+  .lg-items-2 .carousel-inner .active.left {
+    left: -50%;
+  }
+  .lg-items-2 .carousel-inner .active.right {
+    left: 50%;
+  }
+  .lg-items-2 .carousel-inner .next {
+    left: 50%;
+  }
+  .lg-items-2 .carousel-inner .prev {
+    left: -50%;
+  }
+
+  .lg-items-3 .carousel-inner .active.left {
+    left: -33.33333%;
+  }
+  .lg-items-3 .carousel-inner .active.right {
+    left: 33.33333%;
+  }
+  .lg-items-3 .carousel-inner .next {
+    left: 33.33333%;
+  }
+  .lg-items-3 .carousel-inner .prev {
+    left: -33.33333%;
+  }
+
+  .lg-items-4 .carousel-inner .active.left {
+    left: -25%;
+  }
+  .lg-items-4 .carousel-inner .active.right {
+    left: 25%;
+  }
+  .lg-items-4 .carousel-inner .next {
+    left: 25%;
+  }
+  .lg-items-4 .carousel-inner .prev {
+    left: -25%;
+  }
+
+  .lg-items-5 .carousel-inner .active.left {
+    left: -20%;
+  }
+  .lg-items-5 .carousel-inner .active.right {
+    left: 20%;
+  }
+  .lg-items-5 .carousel-inner .next {
+    left: 20%;
+  }
+  .lg-items-5 .carousel-inner .prev {
+    left: -20%;
+  }
+
+  .lg-items-6 .carousel-inner .active.left {
+    left: -16.66667%;
+  }
+  .lg-items-6 .carousel-inner .active.right {
+    left: 16.66667%;
+  }
+  .lg-items-6 .carousel-inner .next {
+    left: 16.66667%;
+  }
+  .lg-items-6 .carousel-inner .prev {
+    left: -16.66667%;
+  }
+
+  .lg-items-7 .carousel-inner .active.left {
+    left: -14.28571%;
+  }
+  .lg-items-7 .carousel-inner .active.right {
+    left: 14.28571%;
+  }
+  .lg-items-7 .carousel-inner .next {
+    left: 14.28571%;
+  }
+  .lg-items-7 .carousel-inner .prev {
+    left: -14.28571%;
+  }
+
+  .lg-items-8 .carousel-inner .active.left {
+    left: -12.5%;
+  }
+  .lg-items-8 .carousel-inner .active.right {
+    left: 12.5%;
+  }
+  .lg-items-8 .carousel-inner .next {
+    left: 12.5%;
+  }
+  .lg-items-8 .carousel-inner .prev {
+    left: -12.5%;
+  }
+
+  .lg-items-9 .carousel-inner .active.left {
+    left: -11.11111%;
+  }
+  .lg-items-9 .carousel-inner .active.right {
+    left: 11.11111%;
+  }
+  .lg-items-9 .carousel-inner .next {
+    left: 11.11111%;
+  }
+  .lg-items-9 .carousel-inner .prev {
+    left: -11.11111%;
+  }
+
+  .lg-items-10 .carousel-inner .active.left {
+    left: -10%;
+  }
+  .lg-items-10 .carousel-inner .active.right {
+    left: 10%;
+  }
+  .lg-items-10 .carousel-inner .next {
+    left: 10%;
+  }
+  .lg-items-10 .carousel-inner .prev {
+    left: -10%;
+  }
+
+  .lg-items-11 .carousel-inner .active.left {
+    left: -9.09091%;
+  }
+  .lg-items-11 .carousel-inner .active.right {
+    left: 9.09091%;
+  }
+  .lg-items-11 .carousel-inner .next {
+    left: 9.09091%;
+  }
+  .lg-items-11 .carousel-inner .prev {
+    left: -9.09091%;
+  }
+
+  .lg-items-12 .carousel-inner .active.left {
+    left: -8.33333%;
+  }
+  .lg-items-12 .carousel-inner .active.right {
+    left: 8.33333%;
+  }
+  .lg-items-12 .carousel-inner .next {
+    left: 8.33333%;
+  }
+  .lg-items-12 .carousel-inner .prev {
+    left: -8.33333%;
+  }
+}
+.multi-item-carousel .carousel-inner > .item {
+  -webkit-transition: 500ms ease-in-out left;
+          transition: 500ms ease-in-out left;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .multi-item-carousel .carousel-inner > .item {
+    -webkit-transition: 500ms ease-in-out left;
+            transition: 500ms ease-in-out left;
+    -webkit-transition: 500ms ease-in-out all;
+            transition: 500ms ease-in-out all;
+    -webkit-backface-visibility: visible;
+            backface-visibility: visible;
+    -webkit-transform: none !important;
+            transform: none !important;
+  }
+}
+.multi-item-carousel .carousel-control.left, .multi-item-carousel .carousel-control.right {
+  background-image: none;
+}*/
