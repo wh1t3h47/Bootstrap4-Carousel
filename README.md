@@ -6,3 +6,4 @@ I couldn't find a working example of a multi-item carousel that wouldn't slide a
 1. Uses documentfragment to keep DOM operations as optimal as possible
 # TODO
 fix CSS animation
+create a working example
